@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Student Chatbot AI
 
@@ -54,3 +55,7 @@ http://127.0.0.1:5000
 
 4. Deploy
 
+=======
+# NextGen_EduBot-
+AI-powered Student Chatbot built using Python, Flask, HTML, CSS, and JavaScript with Wikipedia API integration for real-time question answering and text summarization using REST APIs and responsive UI.
+>>>>>>> 4df6bbd34b8a6fb3df53079e1c7257801420ac2a
