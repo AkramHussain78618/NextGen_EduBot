@@ -5,9 +5,10 @@ from transformers import pipeline
 app = Flask(__name__)
 
 # Advanced AI Models
-qa_pipeline = pipeline(
-    "question-answering",
-    model="deepset/roberta-base-squad2"
+qqa_pipeline = pipeline(
+    task="text-generation",
+    model="google/flan-t5-base"
+)
 )
 
 summarizer = pipeline(
