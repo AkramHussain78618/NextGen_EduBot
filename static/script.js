@@ -1,3 +1,7 @@
+const defaultMessage = `
+<div class="bot-message">
+    Hello 👋 Ask me any educational or general question.
+</div>`;
 
 async function sendMessage() {
 
@@ -38,13 +42,23 @@ async function sendMessage() {
 
         const data = await response.json();
 
-        loadingDiv.innerText = data.answer;
+        loadingDiv.innerText = data.answer || "No response found.";
 
     }catch(error){
         loadingDiv.innerText = "Error fetching response.";
     }
 
     chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function clearChat(){
+    document.getElementById("chat-box").innerHTML = "";
+}
+
+function newChat(){
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML = defaultMessage;
+    document.getElementById("user-input").value = "";
 }
 
 document.getElementById("user-input")
