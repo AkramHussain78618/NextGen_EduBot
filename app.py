@@ -1,20 +1,8 @@
+```python
 from flask import Flask, render_template, request, jsonify
 import requests
-from transformers import pipeline
 
 app = Flask(__name__)
-
-# ✅ QA Model (fixed & correct)
-qa_pipeline = pipeline(
-    task="text-generation",
-    model="gpt2"
-)
-
-# ✅ Summarizer Model
-summarizer = pipeline(
-    "summarization",
-    model="facebook/bart-large-cnn"
-)
 
 HEADERS = {
     "User-Agent": "NextGenEduBot/1.0"
@@ -34,77 +22,48 @@ def fetch_wikipedia_content(question):
             "srsearch": question,
             "format": "json",
             "utf8": 1,
-            "srlimit": 3
+            "srlimit": 1
         }
 
-        response = requests.get(search_url, params=params, headers=HEADERS, timeout=10)
+        response = requests.get(
+            search_url,
+            params=params,
+            headers=HEADERS,
+            timeout=10
+        )
+
         data = response.json()
 
         results = data.get("query", {}).get("search", [])
 
         if not results:
-            return None
+            return "Sorry, I could not find information."
 
-        for result in results:
-            title = result["title"]
+        title = results[0]["title"]
 
-            summary_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
+        summary_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
 
-            summary_response = requests.get(summary_url, headers=HEADERS, timeout=10)
+        summary_response = requests.get(
+            summary_url,
+            headers=HEADERS,
+            timeout=10
+        )
 
-            if summary_response.status_code != 200:
-                continue
+        if summary_response.status_code != 200:
+            return "Sorry, I could not fetch information."
 
-            summary_data = summary_response.json()
-            extract = summary_data.get("extract", "")
+        summary_data = summary_response.json()
 
-            if "may refer to" in extract.lower() or len(extract) < 50:
-                continue
+        extract = summary_data.get("extract", "")
 
-            return extract
+        if not extract:
+            return "Sorry, no summary available."
 
-        return None
-
-    except Exception as e:
-        print("WIKIPEDIA ERROR:", e)
-        return None
-
-
-# -----------------------------
-# AI Answer Generator
-# -----------------------------
-def generate_answer(question):
-    try:
-        content = fetch_wikipedia_content(question)
-
-        if not content:
-            return "Sorry, I could not find relevant information."
-
-        context = content[:2000]
-
-        result = qa_pipeline({
-            "question": question,
-            "context": context
-        })
-
-        answer = result.get("answer", "").strip()
-        score = result.get("score", 0)
-
-        # fallback to summarizer
-        if score < 0.2 or len(answer) < 5:
-            summary = summarizer(
-                context,
-                max_length=120,
-                min_length=40,
-                do_sample=False
-            )
-            return summary[0]["summary_text"]
-
-        return answer
+        return extract
 
     except Exception as e:
-        print("AI ERROR:", e)
-        return "Something went wrong while generating answer."
+        print("ERROR:", e)
+        return "Something went wrong while fetching answer."
 
 
 # -----------------------------
@@ -118,9 +77,10 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
+
     question = data.get("message", "")
 
-    answer = generate_answer(question)
+    answer = fetch_wikipedia_content(question)
 
     return jsonify({
         "question": question,
@@ -133,3 +93,4 @@ def chat():
 # -----------------------------
 if __name__ == "__main__":
     app.run(debug=True)
+```
