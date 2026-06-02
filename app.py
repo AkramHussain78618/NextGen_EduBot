@@ -6,9 +6,10 @@ app = Flask(__name__)
 
 # ✅ QA Model (fixed & correct)
 qa_pipeline = pipeline(
-    "question-answering",
-    model="distilbert-base-cased-distilled-squad"
+    task="text-generation",
+    model="gpt2"
 )
+
 # ✅ Summarizer Model
 summarizer = pipeline(
     "summarization",
