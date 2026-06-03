@@ -1,8 +1,12 @@
-# NEXTGEN_EDUBOT
+# NextGen_EduBot
 
-NEXTGEN_EDUBOT is an AI-powered educational chatbot designed to provide instant learning assistance, intelligent responses, and an interactive user experience for students.
+NextGen_EduBot is an AI-powered educational chatbot designed to provide instant learning assistance, intelligent responses, and an interactive user experience for students.
 
-The project combines modern web technologies with AI integration to create a smart and responsive chatbot system.
+The project combines modern web technologies with AI integration to create a smart and responsive chatbot system.  
+
+## Live Demo
+
+### https://nextgen-edubot.onrender.com/
 
 ---
 
@@ -152,4 +156,4 @@ If you like this project, give it a * on GitHub and support the repository.
 
 Feel free to connect for collaboration and learning opportunities.
 
- Thank you for visiting NEXTGEN_EDUBOT.
+ Thank you for visiting NextGen_EduBot.
