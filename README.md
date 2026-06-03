@@ -1,157 +1,155 @@
-# NextGen EduBot – Intelligent Student Chatbot
+# NEXTGEN_EDUBOT
 
-## Live Demo
+NEXTGEN_EDUBOT is an AI-powered educational chatbot designed to provide instant learning assistance, intelligent responses, and an interactive user experience for students.
 
- https://nextgen-edubot.onrender.com/
-
----
-
-## Project Overview
-
-NextGen EduBot is an AI-powered student chatbot developed using Python and Flask that provides real-time summarized answers for educational and general knowledge questions. The chatbot fetches information dynamically from the Wikipedia API and displays intelligent responses through an attractive and responsive web interface.
-
-The project demonstrates backend API integration, real-time chatbot communication, responsive frontend design, and cloud deployment using Render.
+The project combines modern web technologies with AI integration to create a smart and responsive chatbot system.
 
 ---
 
-## Features
+#  Features
 
-* AI-powered student chatbot
-* Real-time question answering
-* Wikipedia API integration
-* Intelligent text summarization
-* Modern responsive UI
-* Fast chatbot communication
-* Mobile-friendly design
-* REST API integration
-* GitHub & Render deployment ready
-* Beginner-friendly architecture
+*  AI-powered chatbot
+*  Real-time chat interface
+*  Educational assistance
+*  Fast response system
+*  Modern UI/UX design
+*  Fully responsive design
+*  Dark themed interface
+*  Interactive chatbot experience
 
 ---
 
-## Technologies Used
-
-### Backend
+#  Technologies Used
 
 * Python
 * Flask
-
-### Frontend
-
 * HTML5
 * CSS3
 * JavaScript
-
-### APIs & Libraries
-
-* Wikipedia REST API
-* Requests Library
-* REST APIs
-
-### Deployment & Tools
-
-* Gunicorn
-* Git
-* VS Code
-* GitHub
-* Render
+* Bootstrap
+* Gemini API / OpenAI API
 
 ---
 
-## Project Structure
+#  Screenshots
 
-```bash
-NextGen_EduBot/
-│
-├── static/
-│   ├── style.css
-│   └── script.js
-│
-├── templates/
-│   └── index.html
-│
-├── app.py
-├── requirements.txt
-├── Procfile
-└── README.md
-```
+##  Chat Interface
+
+![Chat Interface](screenshots/chat_interface.png)
 
 ---
 
-## Installation & Setup
+##  Chat Response
 
-### 1. Clone Repository
+![Chat Response](screenshots/chat_response.png)
+
+---
+
+#  Installation Guide
+
+## 1️ Clone the Repository
 
 ```bash
 git clone https://github.com/AkramHussain78618/NextGen_EduBot.git
 ```
 
-### 2. Navigate to Project
+---
+
+## 2️ Navigate to Project Folder
 
 ```bash
-cd NextGen_EduBot
+cd NEXTGEN_EDUBOT
 ```
 
-### 3. Install Dependencies
+---
+
+## 3️ Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+```
+
+---
+
+## 4️ Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## 5️ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run Application
+---
+
+## 6️ Run the Application
 
 ```bash
 python app.py
 ```
 
-### 5. Open Browser
+---
+
+#  Deployment
+
+This project can be deployed using:
+
+* Render
+
+---
+
+#  Project Structure
 
 ```bash
-http://127.0.0.1:5000
+NEXTGEN_EDUBOT/
+│
+├── static/
+├── templates/
+├── screenshots/
+│   ├── chat_interface.png
+│   └── chat_response.png
+│
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## Deployment on Render
+#  Project Objective
 
-### Build Command
-
-```bash
-pip install -r requirements.txt
-```
-
-### Start Command
-
-```bash
-gunicorn app:app
-```
+The main goal of NEXTGEN_EDUBOT is to help students interact with an AI assistant for educational support, doubt clarification, and smart learning experiences.
 
 ---
 
-## Sample Questions
+#  Author
 
-* What is Python?
-* What is Data Science?
-* Who is Virat Kohli?
-* Explain Machine Learning
-* What is Artificial Intelligence?
+## Hussain bee & Akram Hussain
 
----
+Aspiring Software Developer passionate about:
 
-## GitHub Repository
-
-https://github.com/AkramHussain78618/NextGen_EduBot
+* Artificial Intelligence
+* Python Development
+* Web Technologies
+* AI Chatbot Development
 
 ---
 
-## Live Demo
+#  GitHub Support
 
-https://nextgen-edubot.onrender.com/
-
----
-
-## Author
-
-Akram Hussain
+If you like this project, give it a * on GitHub and support the repository.
 
 ---
+
+#  Contribution
+
+Feel free to connect for collaboration and learning opportunities.
+
+ Thank you for visiting NEXTGEN_EDUBOT.
