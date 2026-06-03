@@ -62,7 +62,7 @@ git clone https://github.com/AkramHussain78618/NextGen_EduBot.git
 ## 2️ Navigate to Project Folder
 
 ```bash
-cd NEXTGEN_EDUBOT
+cd NextGen_EduBot
 ```
 
 ---
