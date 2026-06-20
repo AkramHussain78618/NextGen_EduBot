@@ -135,14 +135,12 @@ The main goal of NEXTGEN_EDUBOT is to help students interact with an AI assistan
 
 #  Author
 
-## Hussain bee & Akram Hussain
+### Hussain bee & Akram Hussain
 
-Aspiring Software Developer passionate about:
+Aspiring Software Developer passionate about
 
-* Artificial Intelligence
-* Python Development
-* Web Technologies
-* AI Chatbot Development
+Python Development | Web Technologies | AI Development | Artificial Intelligence
+
 
 ---
 
